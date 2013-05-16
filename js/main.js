@@ -187,10 +187,10 @@ ace.require(['ace/range'], function progInit(a) {
         return Object.keys(d.scope).sort(function (a, b) {
           var aSpec = ~special.indexOf(a)
           var bSpec = ~special.indexOf(b)
-          return aSpec && bSpec ? String.localeCompare(a, b)
+          return aSpec && bSpec ? a.localeCompare(b)
            : aSpec ? 1
            : bSpec ? -1
-           : String.localeCompare(a, b)
+           : a.localeCompare(b)
         }).map(function setupPropData(key) {
           return { key: key
                  , val: d.scope[key]
